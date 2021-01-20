@@ -15,13 +15,13 @@ public:
     Player(); //default constructor
     Player (const Player &); //copy constructor
     Player (string); //parameter constructor
-    ~Player(); //destructor 
+    ~Player(); //destructor
 
-    string copyName(string _name);
-    string refName(string &_name);
-    string useName(const string &_name);
+    string copyName(string _name); //pass by value
+    string refName(string &_name); //pass by ref
+    string useName(const string &_name); // pass by ref to const
 
-    vector <string> nameList() const;
+    vector <string> nameList() const; // generic vector
 
 private:
     string _name;
