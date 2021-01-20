@@ -6,16 +6,25 @@
 #define UNTITLED1_PLAYERCHAR_H
 
 #include <string>
+#include <vector>
 using std::string;
+using std::vector;
+class Player{
 
-class playerChar {
 public:
-    int getHealth() const;
-    string name;
+    Player(); //default constructor
+    Player (const Player &); //copy constructor
+    Player (string); //parameter constructor
+    ~Player(); //destructor 
+
+    string copyName(string _name);
+    string refName(string &_name);
+    string useName(const string &_name);
+
+    vector <string> nameList() const;
+
 private:
-    int exp;
-    int level;
-    
+    string _name;
 };
 
 
