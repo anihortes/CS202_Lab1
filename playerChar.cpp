@@ -9,18 +9,36 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Player::Player(){} //default constructor
-Player::Player (const Player &){} //copy constructor
-Player::Player (string){} //parameter constructor
-Player::~Player(){}
+//default constructor
+Player::Player(){
+    cout << "Default constructor is called. \n" ;
+}
+//copy constructor
+Player::Player (const Player &){
+    cout << "Copy constructor is called. \n" ;
+}
+//parameter constructor
+Player::Player (string){
+    cout << "Parameter constructor is called. \n" ;
+}
+//destructor
+Player::~Player(){
+    cout << "Destructor is called. \n" ;
+}
 
 string Player::getName() const{
     return _name;
 }
 
 string Player::setName(){
-    cout << "Enter your name: ";
+    cout << "Enter your name:";
     getline (cin, _name);
-    cout << "\n";
     return _name;
+}
+
+string Player::refName(string &playerName){
+    cout << "Enter your new name:";
+    getline (cin, _name);
+    playerName = _name;
+    return playerName;
 }
