@@ -11,7 +11,9 @@ using std::vector;
 
 
 int main() {
-
+    Player user;
+    user.setName();
+    cout << "Your current name: " << user.getName() << "\n";
 
 
 
