@@ -24,8 +24,7 @@ void constRefName(const Player &user){
     cout << user.getName() << std::endl;
 }
 
-void lab01(){
-    cout << "CS202 LAB01\n";
+int main() {
     vector <Player> playerList;
     cout << "Creating default constructor and push it to vector.\n";
     Player user;
@@ -62,13 +61,8 @@ void lab01(){
     for (auto i : playerList){
         cout << i.getName() << endl;
     }
-}
 
-int main() {
-
-    //lab01();
-
-    cout << "\nCS202 LAB 2:\n";
+    cout << "\n CS202 LAB 2:\n";
 
     string *ptr = new string;
     int *intArray = new int[10];
@@ -77,6 +71,7 @@ int main() {
     delete []intArray;
     Player *playerPtr;
     playerPtr = new Player("joe");
+
 
     delete playerPtr;
     return 0;
