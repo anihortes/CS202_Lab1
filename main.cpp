@@ -24,7 +24,7 @@ void constRefName(const Player &user){
     cout << user.getName() << std::endl;
 }
 
-int main() {
+void lab01(){
     vector <Player> playerList;
     cout << "Creating default constructor and push it to vector.\n";
     Player user;
@@ -61,6 +61,11 @@ int main() {
     for (auto i : playerList){
         cout << i.getName() << endl;
     }
+}
+
+int main() {
+
+    lab01();
 
     cout << "\n CS202 LAB 2:\n";
 
