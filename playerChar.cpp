@@ -13,14 +13,19 @@ using std::endl;
 Player::Player(){
     cout << "Default constructor is called. \n" ;
 }
+
 //copy constructor
-Player::Player (const Player &){
+Player::Player (const Player &user){
+    this -> _name = user.getName();
     cout << "Copy constructor is called. \n" ;
 }
+
 //parameter constructor
-Player::Player (string){
+Player::Player (string tempName){
+    _name = tempName;
     cout << "Parameter constructor is called. \n" ;
 }
+
 //destructor
 Player::~Player(){
     cout << "Destructor is called. \n" ;
@@ -36,9 +41,5 @@ string Player::setName(){
     return _name;
 }
 
-string Player::refName(string &playerName){
-    cout << "Enter your new name:";
-    getline (cin, _name);
-    playerName = _name;
-    return playerName;
-}
+
+
