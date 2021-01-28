@@ -77,7 +77,6 @@ int main() {
     playerPtr = new Player("joe");
     cout << "Created raw pointer playerPtr\n";
 
-
     unique_ptr <Player> uniquePlayer = make_unique<Player>("dan");
     cout << "created unique_ptr\n";
     unique_ptr<Player> uniquePlayer2;
@@ -85,7 +84,6 @@ int main() {
     cout << "transferred ownership of uniquePlayer to uniquePlayer2\n";
     uniquePlayer2->setName();
 
-    (*uniquePlayer2).setName();
     auto *rPtr = uniquePlayer.get();
     cout << "called a member function of object through the unique_ptr\n";
 
@@ -94,7 +92,6 @@ int main() {
 
     auto sharedPlayer2 = sharedPlayer;
     cout << "created second shared pointer\n";
-
 
     delete playerPtr;
     delete rPtr;
