@@ -73,16 +73,28 @@ int main() {
 
     cout << "\nCS202 LAB 2:\n";
 
-    string *ptr = new string;
-    int *intArray = new int[10];
-
-    delete ptr;
-    delete []intArray;
     Player *playerPtr;
     playerPtr = new Player("joe");
+    cout << "Created raw pointer playerPtr\n";
 
-    unique_ptr <Player> p = make_unique<Player>("dan");
-    Player *rPtr = new Player;
+
+    unique_ptr <Player> uniquePlayer = make_unique<Player>("dan");
+    cout << "created unique_ptr\n";
+    unique_ptr<Player> uniquePlayer2;
+    uniquePlayer2 = std::move(uniquePlayer);
+    cout << "transferred ownership of uniquePlayer to uniquePlayer2\n";
+    uniquePlayer2->setName();
+
+    (*uniquePlayer2).setName();
+    auto *rPtr = uniquePlayer.get();
+    cout << "called a member function of object through the unique_ptr\n";
+
+    auto sharedPlayer = std::make_shared<Player>;
+    cout << "created shared pointer\n";
+
+    auto sharedPlayer2 = sharedPlayer;
+    cout << "created second shared pointer\n";
+
 
     delete playerPtr;
     delete rPtr;
