@@ -1,12 +1,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
 #include "playerChar.h"
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
 using std::vector;
+using std::unique_ptr;
+using std::make_unique;
 
 //change users name
 Player passValue(Player user){
@@ -24,7 +27,8 @@ void constRefName(const Player &user){
     cout << user.getName() << std::endl;
 }
 
-int main() {
+void lab01(){
+    cout << "CS202 LAB01\n";
     vector <Player> playerList;
     cout << "Creating default constructor and push it to vector.\n";
     Player user;
@@ -61,8 +65,13 @@ int main() {
     for (auto i : playerList){
         cout << i.getName() << endl;
     }
+}
 
-    cout << "\n CS202 LAB 2:\n";
+int main() {
+
+    //lab01();
+
+    cout << "\nCS202 LAB 2:\n";
 
     string *ptr = new string;
     int *intArray = new int[10];
@@ -72,7 +81,10 @@ int main() {
     Player *playerPtr;
     playerPtr = new Player("joe");
 
+    unique_ptr <Player> p = make_unique<Player>("dan");
+    Player *rPtr = new Player;
 
     delete playerPtr;
+    delete rPtr;
     return 0;
 }

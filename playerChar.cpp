@@ -28,7 +28,7 @@ Player::Player (string tempName){
 
 //destructor
 Player::~Player(){
-    cout << "Destructor is called. \n" ;
+    cout << "Destructor is called on " << _name << "\n" ;
 }
 
 string Player::getName() const{
